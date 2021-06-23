@@ -1,4 +1,4 @@
-const db = require('./config/connectdb')
+const db = require('../config/connectdb');
 
 const Accounts = require('../modle/accounts');
 
