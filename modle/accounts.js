@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Scheme = mongoose.Schema;
-mongoose.set('bufferCommands', true);
+mongoose.set('bufferCommands', false);
 
 const Accounts = new Scheme({
     email: { type: String, require: true, },
@@ -8,6 +8,7 @@ const Accounts = new Scheme({
     cart: { type: Array, }
 }, {
     timestamps: true,
+    bufferCommands: false,
     bufferTimeoutMS: 1000
 });
 
