@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Scheme = mongoose.Schema;
-
+mongoose.set('bufferCommands', true);
 
 const Accounts = new Scheme({
     email: { type: String, require: true, },
