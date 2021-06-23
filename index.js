@@ -4,7 +4,11 @@ const port = process.env.PORT || 3000
 const db = require('./config/connectdb');
 const route = require('./router/index');
 
-db.connect();
+async function next() {
+    await db.connect();
+}
+next();
+
 
 route(app);
 app.listen(port, () => {
