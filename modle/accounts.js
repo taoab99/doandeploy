@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Scheme = mongoose.Schema;
+const MongoClient = require('mongodb').MongoClient;
+const Scheme = MongoClient.Schema;
 mongoose.set('bufferCommands', false);
 
 const Accounts = new Scheme({
@@ -12,4 +12,4 @@ const Accounts = new Scheme({
     bufferTimeoutMS: 1000
 });
 
-module.exports = mongoose.model('Accounts', Accounts);
+module.exports = MongoClient.model('Accounts', Accounts);
