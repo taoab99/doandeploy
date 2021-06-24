@@ -1,5 +1,5 @@
-const MongoClient = require('mongodb').MongoClient;
-const Scheme = MongoClient.Schema;
+const mongoose = require('mongoose');
+const Scheme = mongoose.Schema;
 mongoose.set('bufferCommands', false);
 
 const Accounts = new Scheme({
@@ -7,9 +7,7 @@ const Accounts = new Scheme({
     password: { type: String, require: true },
     cart: { type: Array, }
 }, {
-    timestamps: true,
-    bufferCommands: false,
-    bufferTimeoutMS: 1000
+    timestamps: true
 });
 
-module.exports = MongoClient.model('Accounts', Accounts);
+module.exports = mongoose.model('Accounts', Accounts);

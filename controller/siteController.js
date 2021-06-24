@@ -1,4 +1,4 @@
-const db = require('../config/connectdb');
+// const db = require('../config/connectdb');
 
 const Accounts = require('../modle/accounts');
 
@@ -9,7 +9,6 @@ class siteController {
 
     async getaccount(req, res, next) {
         try {
-            await db.connect();
             await Accounts.find({})
                 .then(accounts => {
                     res.json({
