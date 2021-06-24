@@ -6,7 +6,8 @@ const Accounts = new Scheme({
     password: { type: String, require: true },
     cart: { type: Array, }
 }, {
-    timestamps: true
+    timestamps: true,
+    bufferCommands: false
 });
 
 module.exports = mongoose.model('Accounts', Accounts);
