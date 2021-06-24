@@ -1,8 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose');
+const DATABASE_URL = " mongodb://localhost:27017/DOAN";
 const connectdb = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/DOAN',
+        await mongoose.connect(DATABASE_URL,
             {
                 useCreateIndex: true,
                 useNewUrlParser: true,

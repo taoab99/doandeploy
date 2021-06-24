@@ -7,7 +7,7 @@ const Accounts = new Scheme({
     cart: { type: Array, }
 }, {
     timestamps: true,
-    bufferCommands: true
+    bufferCommands: true,
 });
 
 module.exports = mongoose.model('Accounts', Accounts);
