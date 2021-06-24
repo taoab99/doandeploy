@@ -9,7 +9,12 @@ const connectdb = async () => {
                 useUnifiedTopology: true,
                 useFindAndModify: false
             })
-        console.log('mongodb conneced');
+            .then(x => {
+                console.log(`connected "${x.connections[0].name}"`)
+            })
+            .catch(err => {
+                console.error('eror', err);
+            })
     } catch (error) {
         console.log(error.message);
     }
