@@ -1,8 +1,4 @@
 const express = require('express')
-
-const app = express()
-const port = process.env.PORT || 3000
-
 const mongoose = require('mongoose');
 const connectdb = async () => {
     try {
@@ -15,7 +11,6 @@ const connectdb = async () => {
             })
             .then(x => {
                 console.log(`connected ""`)
-                route(app);
             })
             .catch(err => {
                 console.error('eror', err);
@@ -28,11 +23,14 @@ const connectdb = async () => {
 connectdb();
 
 
+const app = express()
+const port = process.env.PORT || 3000
+
 const route = require('./router/index');
 
 
 
-
+route(app);
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
