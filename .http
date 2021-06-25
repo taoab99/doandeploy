@@ -1,0 +1,12 @@
+POST http://localhost:3000/accounts
+Content-Type: application/json
+
+
+{
+    "email": "khactao99@gmail.com",
+    "password": "12345"
+}
+
+###
+
+GET http://localhost:3000/getacounts

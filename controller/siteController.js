@@ -7,18 +7,41 @@ class siteController {
         res.json('bui khac tao');
     }
 
-    async getaccount(req, res, next) {
+
+    async createacount(req, res, next) {
+        const email = req.body.email;
+        const password = req.body.password;
         try {
-            await Accounts.find({})
-                .then(accounts => {
+            let usename = new Accounts({
+                email: email,
+                password: password
+            });
+
+            await usename.save()
+                .then(tk => {
                     res.json({
-                        accounts: accounts
+                        tk: tk
                     })
                 })
-                .catch(next);
+                .catch(next)
         } catch (error) {
             console.log(error);
         }
+    }
+
+    async getacounts(req, res, next) {
+        try {
+            await Accounts.find({})
+                .then(tk => {
+                    res.json({
+                        tk: tk
+                    });
+                })
+                .catch(next);
+        } catch (error) {
+            console.log('coloi roi error');
+        }
+
     }
 }
 

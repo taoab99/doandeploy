@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const siteController = require('../controller/siteController');
 
-router.get('/accounts', siteController.getaccount)
+router.post('/accounts', siteController.createacount);
+router.get('/getacounts', siteController.getacounts)
 router.get('/', siteController.index);
 
 
